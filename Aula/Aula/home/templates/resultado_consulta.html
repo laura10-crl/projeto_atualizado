@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Resultado da Busca</title>
+
+<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/cadastro/">Cadastrar Livro</a>
+<a href="/consulta/">Consultar por Nome</a>
+<a href="/listar/">Listar Livros</a>
+<a href="/sobre/">Sobre</a>
+<a href="/contato/">Contato</a>
+</nav>
+
+<h2>Resultado da Busca</h2>
+
+{% for livro in livros %}
+
+<p>
+<b>{{ livro.titulo }}</b><br>
+Autor: {{ livro.autor }}<br>
+
+<a href="/livro/{{livro.id}}/" class="botao-detalhes">Ver detalhes</a>
+
+</p>
+
+{% empty %}
+
+<p>Nenhum livro encontrado.</p>
+
+{% endfor %}
+
+</body>
+</html>

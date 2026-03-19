@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Confirmação</title>
+
+<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/cadastro/">Cadastrar Livro</a>
+<a href="/consulta/">Consultar por Nome</a>
+<a href="/listar/">Listar Livros</a>
+<a href="/sobre/">Sobre</a>
+<a href="/contato/">Contato</a>
+</nav>
+
+<main class="container">
+    <section class="info-card">
+        <h2>Livro cadastrado com sucesso!</h2>
+        <p>O livro foi adicionado ao sistema e agora está disponível para consulta e listagem.</p>
+        <div class="card-actions">
+            <a href="/" class="btn botao-voltar">Voltar para Home</a>
+            <a href="/cadastro/" class="btn botao-detalhes">Cadastrar outro</a>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

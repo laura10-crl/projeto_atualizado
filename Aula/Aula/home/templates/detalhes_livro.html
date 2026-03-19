@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Detalhes do Livro</title>
+
+<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/cadastro/">Cadastrar Livro</a>
+<a href="/consulta/">Consultar por Nome</a>
+<a href="/listar/">Listar Livros</a>
+<a href="/sobre/">Sobre</a>
+<a href="/contato/">Contato</a>
+</nav>
+
+<h2>Detalhes do Livro</h2>
+
+<div class="detail-block">
+    <p class="detail-item"><span class="detail-label">Título</span><span>{{ livro.titulo }}</span></p>
+    <p class="detail-item"><span class="detail-label">Autor</span><span>{{ livro.autor }}</span></p>
+    <p class="detail-item"><span class="detail-label">Editora</span><span>{{ livro.editora }}</span></p>
+    <p class="detail-item"><span class="detail-label">Ano</span><span>{{ livro.ano }}</span></p>
+    <p class="detail-item"><span class="detail-label">Páginas</span><span>{{ livro.paginas }}</span></p>
+    <p class="detail-item"><span class="detail-label">Categoria</span><span>{{ livro.categoria }}</span></p>
+    <p class="detail-item"><span class="detail-label">ISBN</span><span>{{ livro.isbn }}</span></p>
+    <p class="detail-item"><span class="detail-label">Idioma</span><span>{{ livro.idioma }}</span></p>
+    <p class="detail-item"><span class="detail-label">Descrição</span><span>{{ livro.descricao }}</span></p>
+    <p class="detail-item"><span class="detail-label">Cadastrado por</span><span>{{ livro.cadastrado_por }}</span></p>
+</div>
+
+<a href="/listar/" class="botao-voltar">Voltar</a>
+
+</body>
+</html>

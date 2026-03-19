@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Consultar Livro</title>
+
+<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/cadastro/">Cadastrar Livro</a>
+<a href="/listar/">Listar Livros</a>
+<a href="/sobre/">Sobre</a>
+<a href="/contato/">Contato</a>
+</nav>
+
+<h2>Consultar Livro</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="text" name="titulo" placeholder="Digite o nome do livro">
+
+<button type="submit">Buscar</button>
+
+</form>
+
+</body>
+</html>

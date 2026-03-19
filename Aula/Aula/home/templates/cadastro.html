@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Cadastrar Livro</title>
+
+<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+<script src="{% static 'js/validacao.js' %}"></script>
+
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/consulta/">Consultar por Nome</a>
+<a href="/listar/">Listar Livros</a>
+<a href="/sobre/">Sobre</a>
+<a href="/contato/">Contato</a>
+</nav>
+
+<h2>Cadastrar Livro</h2>
+
+<form method="POST" onsubmit="return validarFormulario()">
+{% csrf_token %}
+
+<input type="text" id="titulo" name="titulo" placeholder="Título"><br>
+
+<input type="text" name="autor" placeholder="Autor"><br>
+
+<input type="text" name="editora" placeholder="Editora"><br>
+
+<input type="number" id="ano" name="ano" placeholder="Ano de publicação"><br>
+
+<input type="number" id="paginas" name="paginas" placeholder="Número de páginas"><br>
+
+<input type="text" name="categoria" placeholder="Categoria"><br>
+
+<input type="text" name="isbn" placeholder="ISBN"><br>
+
+<input type="text" name="idioma" placeholder="Idioma"><br>
+
+<textarea name="descricao" placeholder="Descrição"></textarea><br>
+
+<input type="text" name="cadastrado_por" placeholder="Seu nome"><br>
+
+<button type="submit">Cadastrar</button>
+
+</form>
+
+</body>
+</html>

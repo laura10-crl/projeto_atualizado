@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Confirmar Exclusão</title>
+
+<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/cadastro/">Cadastrar Livro</a>
+<a href="/consulta/">Consultar por Nome</a>
+<a href="/listar/">Listar Livros</a>
+<a href="/sobre/">Sobre</a>
+<a href="/contato/">Contato</a>
+</nav>
+
+<h2>Confirmar Exclusão</h2>
+
+<p>Deseja excluir o livro {{ livro.titulo }} ?</p>
+
+<form method="POST" class="detail-block">
+    {% csrf_token %}
+    <button type="submit" class="btn botao-excluir">Sim, excluir</button>
+</form>
+
+<a href="/listar/" class="btn botao-cancelar" style="width: auto; margin: 0.75rem auto 0.25rem;">Cancelar</a>
+
+</body>
+</html>

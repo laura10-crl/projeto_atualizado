@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Lista de Livros</title>
+
+<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+</head>
+
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/cadastro/">Cadastrar Livro</a>
+<a href="/consulta/">Consultar por Nome</a>
+<a href="/sobre/">Sobre</a>
+<a href="/contato/">Contato</a>
+</nav>
+
+<h2>Lista de Livros</h2>
+
+<section class="container">
+    <div class="card-grid">
+        {% for livro in livros %}
+        <article class="card">
+            <h3>{{ livro.titulo }}</h3>
+            <p class="lead">{{ livro.autor }}</p>
+            <div class="card-actions">
+                <a href="/livro/{{ livro.id }}/" class="btn botao-detalhes">Detalhes</a>
+                <a href="/excluir/{{ livro.id }}/" class="btn botao-excluir">Excluir</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+</body>
+</html>
